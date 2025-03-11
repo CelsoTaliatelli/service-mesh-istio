@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: celsotaliatelli/nginx:b
+        image: celsotaliatelli/nginx:a
         ports:
         - containerPort: 80
 
@@ -26,7 +26,7 @@ kind: Deployment
 metadata:
   name: nginx-b
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -53,6 +53,6 @@ spec:
   selector:
     app: nginx
   ports:
-  - port: 8001
+  - port: 8000
     targetPort: 80
-    nodePort: 30001
+    nodePort: 30000
